@@ -10,7 +10,7 @@ const translations = {
     ],
     skillsTitle: "Скиллы",
     skillsBody: [
-      "Я используюсь Adobe Premiere Pro, Adobe After Effects, Adobe Photoshop, FL Studio (для sfx).",
+      "Я использую Adobe Premiere Pro, Adobe After Effects, Adobe Photoshop, FL Studio (для sfx).",
       "Сейчас я не открыт для заказов на длинные видео (10min+) с комплексной графикой",
       "Моё портфолио --> https://t.me/arfi_edit",
     ],

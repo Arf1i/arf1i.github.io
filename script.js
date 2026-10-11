@@ -5,8 +5,8 @@ const translations = {
     aboutTitle: "О себе",
     aboutBody: [
       "Я Арфи, опытный монтажёр.",
-      'Уже больше чем 10 лет я варюсь в блогинге - занимаясь этим сам и изучая других медиа личностей. Поэтому я привык вникать в стиль человека и его целевую аудиторию, не используя "универсальный" стиль монтажа для каждого.',
-      "Более 6 лет я занимаюсь видеомонтажом, начиная с мобильного устройства. А в 2025 взялся за развития своих навыков серьёзно, и в данный момент беру заказы на монтаж.",
+      'Уже больше чем 10 лет я варюсь в блогинге - занимаясь этим сам и изучая других медиа персон. Поэтому я привык вникать в стиль человека и его целевую аудиторию, не используя "универсальный" стиль монтажа для каждого.',
+      "Более 6 лет я занимаюсь видеомонтажом, начиная на мобильном устройстве. А в 2025 взялся за это серьёзно, и в данный момент беру заказы на монтаж.",
     ],
     skillsTitle: "Скиллы",
     skillsBody: [
@@ -29,7 +29,7 @@ const translations = {
     aboutBody: [
       "I'm Arfi, an experienced editor.",
       "I've been in blogging for more than 10 years — doing it myself and studying other media personalities. So I'm used to getting into a person's style and their audience, instead of using a \"universal\" editing style for everyone.",
-      "I've been editing video for more than 6 years, starting on a phone. In 2025 I started taking my craft seriously, and I'm currently taking editing commissions.",
+      "I've been editing video for more than 6 years, starting on a phone. In 2025 I started taking this seriously, and I'm currently taking editing commissions.",
     ],
     skillsTitle: "Skills",
     skillsBody: [

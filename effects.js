@@ -15,6 +15,8 @@
   const FOG_W = 320; // rendered small, upscaled by the browser -> cheap + soft
   const FOG_H = 320;
 
+  const SPEED = 1.1; // global motion multiplier
+
   let width = 0;
   let height = 0;
   let dpr = 1;
@@ -166,12 +168,12 @@
   function frame(now) {
     const dt = Math.min(64, now - lastFrame) / 1000;
     lastFrame = now;
-    time += dt;
+    time += dt * SPEED;
 
     parallaxX += (targetX - parallaxX) * Math.min(1, dt * 1.6);
     parallaxY += (targetY - parallaxY) * Math.min(1, dt * 1.6);
 
-    stepDust(dt);
+    stepDust(dt * SPEED);
     render();
 
     rafId = requestAnimationFrame(frame);

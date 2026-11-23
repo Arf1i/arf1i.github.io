@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-title" content="byak">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-<link rel="stylesheet" href="./styles.css?v=1795445000">
+<link rel="stylesheet" href="./styles.css?v=1795445576">
 <script>
   // Тема применяется до первой отрисовки — без вспышки белого
   (function () {
@@ -43,7 +43,7 @@
   <header class="topbar">
     <div class="topbar__text">
       <p class="eyebrow" id="eyebrow">Сегодня</p>
-      <h1 class="display" id="heading">Дела</h1>
+      <h1 class="display" id="heading">byak</h1>
     </div>
     <div class="topbar__actions">
       <button class="icon-btn" id="theme-btn" type="button" aria-label="Сменить тему" title="Сменить тему">
@@ -89,17 +89,14 @@
   </main>
 
   <nav class="tabbar" aria-label="Разделы">
-    <button class="tabbar__btn is-active" data-view="tasks" type="button">
+    <button class="tabbar__btn is-active" data-view="tasks" type="button" aria-label="Раздел 1">
       <svg class="tabbar__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5l2 2 3.5-4M4.5 13.5l2 2 3.5-4M13.5 7h6M13.5 14h6M13.5 20h6M4.5 19.5h5"/></svg>
-      <span>Дела</span>
     </button>
-    <button class="tabbar__btn" data-view="diary" type="button">
+    <button class="tabbar__btn" data-view="diary" type="button" aria-label="Раздел 2">
       <svg class="tabbar__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h9.5A2.5 2.5 0 0117 7v13H7.5A2.5 2.5 0 015 17.5v-13z"/><path d="M17 8.5h2v11.5h-2M8.5 9h5M8.5 12.5h5"/></svg>
-      <span>Дневник</span>
     </button>
-    <button class="tabbar__btn" data-view="reports" type="button">
+    <button class="tabbar__btn" data-view="reports" type="button" aria-label="Раздел 3">
       <svg class="tabbar__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V10M12 20V4.5M18 20v-6.5"/></svg>
-      <span>Отчёты</span>
     </button>
   </nav>
 
@@ -125,7 +122,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="./vendor/supabase.js" defer></script>
-<script src="./config.js?v=1795445000" defer></script>
-<script src="./app.js?v=1795445000" defer></script>
+<script src="./config.js?v=1795445576" defer></script>
+<script src="./app.js?v=1795445576" defer></script>
 </body>
 </html>

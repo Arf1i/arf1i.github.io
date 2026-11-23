@@ -374,9 +374,9 @@
     const [tasks, entries, reports] = await fetchAll();
 
     state.errors = {
-      tasks: tasks.error ? 'Не удалось загрузить дела' : null,
-      entries: entries.error ? 'Не удалось загрузить дневник' : null,
-      reports: reports.error ? 'Не удалось загрузить отчёты' : null,
+      tasks: tasks.error ? 'Не удалось загрузить список' : null,
+      entries: entries.error ? 'Не удалось загрузить записи' : null,
+      reports: reports.error ? 'Не удалось загрузить итоги' : null,
     };
 
     const failed = [tasks, entries, reports].filter(r => r.error);
@@ -552,12 +552,12 @@
       el.eyebrow.textContent = state.entries.length
         ? 'записей: ' + state.entries.length
         : 'пока пусто';
-      el.heading.textContent = 'Дневник';
+      el.heading.textContent = 'Записи';
     } else {
       el.eyebrow.textContent = state.reports.length
-        ? 'отчётов: ' + state.reports.length
+        ? 'итогов: ' + state.reports.length
         : 'пока нет';
-      el.heading.textContent = 'Отчёты';
+      el.heading.textContent = 'Итоги';
     }
   }
 
@@ -575,7 +575,7 @@
     if (!pills.length) {
       const open = active.length;
       pills.push(open
-        ? '<span class="stat"><b>' + open + '</b> ' + plural(open, 'открытое дело', 'открытых дела', 'открытых дел') + '</span>'
+        ? '<span class="stat"><b>' + open + '</b> открытых</span>'
         : '<span class="stat stat--good">Всё сделано</span>');
     }
     el.summary.innerHTML = pills.join('');
@@ -669,15 +669,15 @@
       html += groupHtml('Скоро', soon, { startIndex: late.length + dueToday.length });
       html += groupHtml('Без даты', someday, { startIndex: late.length + dueToday.length + soon.length });
 
-      if (!active.length) html = emptyState('Всё чисто', 'Нет открытых дел. Новые появятся здесь, когда вы попросите агента.');
+      if (!active.length) html = emptyState('Всё чисто', 'Ничего открытого. Новое появится здесь, когда попросите агента.');
     } else if (state.filter === 'done') {
       html = done.length
         ? groupHtml('Сделано', done.slice(0, 60))
-        : emptyState('Пока ничего', 'Отмеченные дела будут собираться здесь.');
+        : emptyState('Пока ничего', 'Отмеченное будет собираться здесь.');
     } else {
       html += groupHtml('Открытые', active);
       if (done.length) html += groupHtml('Сделано', done.slice(0, 40), { startIndex: active.length });
-      if (!active.length && !done.length) html = emptyState('Пусто', 'Здесь появятся дела, которые вы добавите через чат с агентом.');
+      if (!active.length && !done.length) html = emptyState('Пусто', 'Здесь появится то, что вы добавите через чат с агентом.');
     }
 
     el.tasksList.innerHTML = html;
@@ -702,7 +702,7 @@
     });
 
     if (!entries.length) {
-      el.diaryList.innerHTML = emptyState('Дневник пуст', 'Попросите агента записать день — запись появится здесь через секунду.');
+      el.diaryList.innerHTML = emptyState('Пусто', 'Попросите агента записать — появится здесь через секунду.');
       return;
     }
 
@@ -740,14 +740,14 @@
     const reports = state.reports.slice().sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
 
     if (!reports.length) {
-      el.reportsList.innerHTML = emptyState('Отчётов пока нет', 'Попросите агента собрать отчёт за неделю или месяц — он появится здесь.');
+      el.reportsList.innerHTML = emptyState('Пока пусто', 'Попросите агента собрать итоги за неделю или месяц — появятся здесь.');
       return;
     }
 
     el.reportsList.innerHTML = reports.map((report, i) => {
       const excerpt = previewText(report.body_md, { bullets: false });
       return '<button class="report" style="--i:' + i + '" data-report="' + escapeHtml(report.id) + '">' +
-        '<div class="report__meta"><span>' + escapeHtml(reportPeriod(report)) + '</span><span class="dot"></span><span>отчёт</span></div>' +
+        '<div class="report__meta"><span>' + escapeHtml(reportPeriod(report)) + '</span><span class="dot"></span><span>сводка</span></div>' +
         '<div class="report__title">' + escapeHtml(report.title) + '</div>' +
         '<div class="report__excerpt">' + escapeHtml(excerpt) + '</div>' +
       '</button>';
